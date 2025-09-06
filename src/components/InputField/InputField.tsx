@@ -119,19 +119,20 @@ const InputField: React.FC<InputFieldProps> = ({
     }
 
     const normalVariants = {
-      filled:
-        theme === 'dark'
-          ? 'bg-gray-800 border-gray-700 text-white hover:bg-gray-750 focus:bg-gray-900 focus:border-blue-500 focus:ring-blue-500/20'
-          : 'bg-gray-50 border-gray-200 text-gray-900 hover:bg-gray-100 focus:bg-white focus:border-blue-500 focus:ring-blue-200',
-      outlined:
-        theme === 'dark'
-          ? 'bg-gray-900 border-gray-700 text-white hover:border-gray-600 focus:border-blue-500 focus:ring-blue-500/20'
-          : 'bg-white border-gray-300 text-gray-900 hover:border-gray-400 focus:border-blue-500 focus:ring-blue-200',
-      ghost:
-        theme === 'dark'
-          ? 'bg-transparent border-transparent text-white hover:bg-gray-800 focus:bg-gray-800 focus:border-gray-600 focus:ring-blue-500/20'
-          : 'bg-transparent border-transparent text-gray-900 hover:bg-gray-50 focus:bg-gray-50 focus:border-gray-300 focus:ring-blue-200',
-    };
+  filled:
+    theme === 'dark'
+      ? 'bg-gray-800 border-none text-white focus:bg-gray-900 focus:border-blue-500 focus:ring-blue-500/20'
+      : 'bg-gray-100 border-none text-gray-900 focus:bg-white focus:border-blue-500 focus:ring-blue-200',
+  outlined:
+    theme === 'dark'
+      ? 'bg-gray-900 border border-gray-600 text-white focus:border-blue-500 focus:ring-blue-500/20'
+      : 'bg-white border border-gray-400 text-gray-900 focus:border-blue-500 focus:ring-blue-200',
+  ghost:
+    theme === 'dark'
+      ? 'bg-transparent border-b border-gray-600 text-white focus:border-blue-500 focus:ring-0'
+      : 'bg-transparent border-b border-gray-400 text-gray-900 focus:border-blue-500 focus:ring-0',
+};
+
 
     return `${baseClasses} ${sizeConfig[size].input} ${normalVariants[variant]}`;
   };
